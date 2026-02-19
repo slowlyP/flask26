@@ -1,0 +1,59 @@
+/* =========================
+   NAVBAR CENTER MENU
+========================= */
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-center .nav-link {
+    margin: 0 15px;
+    font-weight: 500;
+}
+/* =========================
+   LMS LANDING HERO
+========================= */
+
+.landing-hero{
+    height: calc(100vh - 80px); /* navbar 제외 */
+
+    background-image: url("/static/images/landing_bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+/* 텍스트 위치 */
+.landing-text{
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #fff;
+    max-width: 500px;
+}
+
+/* 제목 */
+.landing-text h1{
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 설명 */
+.landing-text p{
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* 버튼 */
+.landing-text .btn{
+    padding: 12px 40px;
+    border-radius: 30px;
+    margin-top: 200px;
+}

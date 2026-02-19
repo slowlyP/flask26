@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>회원 목록</h2>
+
+<table class="table table-bordered mt-4">
+
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>아이디</th>
+            <th>이름</th>
+            <th>권한</th>
+            <th>상태</th>
+            <th>가입일</th>
+            <th>관리</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        {% for m in members %}
+        <tr>
+        
+            <td>{{ m.id }}</td>
+            <td>{{ m.uid }}</td>
+            <td>{{ m.name }}</td>
+            <td>{{ m.role }}</td>
+        
+            <!-- 상태 -->
+            <td>
+                {% if m.status == "active" %}
+                    <span class="badge bg-success">active</span>
+                {% else %}
+                    <span class="badge bg-secondary">block</span>
+                {% endif %}
+            </td>
+        
+            <td>{{ m.reg_date }}</td>
+        
+            <td class="d-flex gap-2">
+        
+                {% if m.status == "active" %}
+                    <a href="/member/status/{{ m.id }}/block"
+                       class="btn btn-sm btn-danger">
+                       비활성
+                    </a>
+                {% else %}
+                    <a href="/member/status/{{ m.id }}/active"
+                       class="btn btn-sm btn-success">
+                       활성
+                    </a>
+                {% endif %}
+
+                <a href="/member/delete/{{ m.id }}"
+                class="btn btn-sm btn-dark"
+                onclick="return confirm('삭제하시겠습니까?')">
+                삭제
+             </a>
+        
+            </td>
+        
+        </tr>
+        {% endfor %}
+        
+        </tbody>
+    </table>
+
+    {% endblock %}
+
+        

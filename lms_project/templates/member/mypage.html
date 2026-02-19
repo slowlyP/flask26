@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>마이페이지</h2>
+
+
+
+{% if member.profile_img %}
+    <img src="/static/uploads/{{ member.profile_img }}"
+         width="120"
+         height="120"
+         style="border-radius:50%">
+{% else %}
+    <img src="/static/default.png"
+         width="120"
+         height="120"
+         style="border-radius:50%">
+{% endif %}
+
+
+
+<table class="table table-bordered mt-4">
+
+    <tr>
+        <th>아이디</th>
+        <td>{{ member.uid }}</td>
+    </tr>
+
+    <tr>
+        <th>이름</th>
+        <td>{{ member.name }}</td>
+    </tr>
+
+    <tr>
+        <th>권한</th>
+        <td>{{ member.role }}</td>
+    </tr>
+
+    <tr>
+        <th>상태</th>
+        <td>{{ member.status }}</td>
+    </tr>
+
+    <tr>
+        <th>가입일</th>
+        <td>{{ member.reg_date }}</td>
+    </tr>
+
+</table>
+<a href="/member/edit"
+   class="btn btn-primary">
+   회원정보 수정
+</a>
+
+{% endblock %}
+
+
+

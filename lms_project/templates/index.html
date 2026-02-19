@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="landing-hero">
+
+    <div class="landing-text">
+
+
+
+        {% if session.get("login_user") %}
+
+            <a href="/lecture" class="btn btn-light">
+                강의 보러가기
+            </a>
+
+        {% else %}
+
+            <a href="/member/login" class="btn btn-light me-2">
+                로그인
+            </a>
+
+            <a href="/member/join" class="btn btn-outline-light">
+                회원가입
+            </a>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}
